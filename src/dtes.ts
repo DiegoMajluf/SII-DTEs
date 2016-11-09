@@ -1,4 +1,4 @@
-import * as firma from './firma_electronica';
+import {firma} from './firma_electronica';
 
 
 export namespace dtes {
