@@ -1,6 +1,6 @@
 {
   "name": "sii-dtes",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Representación en TypeScript de los documentos tributarios electrónicos",
   "repository": {
     "type": "git",
