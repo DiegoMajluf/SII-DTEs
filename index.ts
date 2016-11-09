@@ -1,5 +1,5 @@
-import * as dtes from './src/dtes'
-import * as firma from './src/firma_electronica'
+import {dtes} from './src/dtes'
+import {firma} from './src/firma_electronica'
 
 
 
