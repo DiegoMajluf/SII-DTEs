@@ -1,7 +1,7 @@
-import {dtes} from './src/dtes'
-import {firma} from './src/firma_electronica'
+import * as dtes from './src/dtes'
+import * as firma from './src/firma_electronica'
 
 
 
-export var dte = dtes
-export var firma_electronica = firma
+export import dtes = dtes;
+export import firma = firma;
