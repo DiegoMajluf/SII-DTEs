@@ -3,5 +3,5 @@ import * as firma from './src/firma_electronica'
 
 
 
-export import dtes = dtes;
+export import dte = dtes;
 export import firma = firma;
