@@ -1,5 +1,4 @@
 
-
 /**Firma Digital sobre Documento. */
 export class Signature {
 	/**Descripcion de la Informacion Firmada y del Metodo de Firma. */

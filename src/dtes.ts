@@ -1,7 +1,6 @@
 import * as firma from './firma_electronica';
 
 
-
 /**Envio de Documentos Tributarios Electronicos. */
 export class EnvioDTE {
 

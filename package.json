@@ -7,7 +7,15 @@
     "url": "https://github.com/DiegoMajluf/SII-DTEs.git"
   },
   "license": "ISC",
+  "scripts": {
+    "start": "tsc && node app",
+    "postinstall": "typings install && tsc"
+  },
+  "dependencies": {
+    "dateformat": "^1.0.12"
+  },
   "devDependencies": {
-    "typescript": "^2.0.3"
+    "typescript": "^2.0.3",
+    "typings": "^1.4.0"    
   }
 }
