@@ -33,6 +33,9 @@ exports.dateReviver = function (key, value) {
 exports.getEncabezado = function (dte) {
     return dte.Documento.Encabezado || dte.Exportaciones.Encabezado || dte.Liquidacion.Encabezado;
 };
+exports.getDetalles = function (dte) {
+    return dte.Documento.Detalle || dte.Exportaciones.Detalle || dte.Liquidacion.Detalle;
+};
 exports.getAporteVentasDocumento = function (dte) {
     var sig = exports.getSignoDocumento(dte);
     if (sig === 0)

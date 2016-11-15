@@ -41,6 +41,11 @@ export var getEncabezado = (dte: dte.DTE): dte.DocumentoEncabezado | dte.Exporta
     return dte.Documento.Encabezado || dte.Exportaciones.Encabezado || dte.Liquidacion.Encabezado
 }
 
+export var getDetalles = (dte: dte.DTE): (dte.DocumentoDetalle | dte.ExportacionesDetalle | dte.LiquidacionDetalle)[] => {
+
+    return dte.Documento.Detalle || dte.Exportaciones.Detalle || dte.Liquidacion.Detalle
+}
+
 /** Devuelve el aporte a ventas del documentos. EL valor neto con signo  */
 export var getAporteVentasDocumento = (dte: dte.DTE): number => {
     let sig = getSignoDocumento(dte)
