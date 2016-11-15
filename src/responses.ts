@@ -12,7 +12,7 @@ export class InsertDTEResponse {
 
 export class QueryResponsePoint {
     periodo: periodo.Periodo
-    valores: {
+    monedas: {
         [moneda: string]: {
             valor: number, numDocs: number,
             etiquetas: {
