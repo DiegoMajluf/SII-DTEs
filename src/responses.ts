@@ -15,7 +15,7 @@ export class QueryResponsePoint {
     monedas: {
         [moneda: string]: {
             valor: number, numDocs: number,
-            etiquetas: {
+            etiquetas?: {
                 [etiqueta: string]: {
                     valor: number,
                     numDocs: number
@@ -24,7 +24,7 @@ export class QueryResponsePoint {
         };
     }
     numDocs: number
-    grupoEtiquetas: string
+    grupoEtiquetas?: string
 }
 
 

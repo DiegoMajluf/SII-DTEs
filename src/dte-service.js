@@ -30,4 +30,7 @@ exports.dateReviver = function (key, value) {
             return new Date(value);
     return value;
 };
+exports.getEncabezado = function (dte) {
+    return dte.Documento.Encabezado || dte.Exportaciones.Encabezado || dte.Liquidacion.Encabezado;
+};
 //# sourceMappingURL=dte-service.js.map

@@ -36,4 +36,9 @@ export var dateReviver = (key: string, value: any) => {
     return value;
 }
 
+export var getEncabezado = (dte: dte.DTE): dte.DocumentoEncabezado | dte.ExportacionesEncabezado | dte.LiquidacionEncabezado => {
+
+    return dte.Documento.Encabezado || dte.Exportaciones.Encabezado || dte.Liquidacion.Encabezado
+}
+
 
