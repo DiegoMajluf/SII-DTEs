@@ -41,4 +41,17 @@ export var getEncabezado = (dte: dte.DTE): dte.DocumentoEncabezado | dte.Exporta
     return dte.Documento.Encabezado || dte.Exportaciones.Encabezado || dte.Liquidacion.Encabezado
 }
 
+/** Devuelve el aporte a ventas del documentos. EL valor neto con signo  */
+export var getAporteVentasDocumento = (dte: dte.DTE): number => {
+    let sig = getSignoDocumento(dte)
+    if (sig === 0) return 0;
+    if (dte.Documento)
+        return sig * (dte.Documento.Encabezado.Totales.MntExe || 0 + dte.Documento.Encabezado.Totales.MntNeto || 0);
+    else if (dte.Exportaciones)
+        return sig * dte.Exportaciones.Encabezado.Totales.MntExe
+    else
+        return sig * (dte.Liquidacion.Encabezado.Totales.Comisiones.ValComExe || 0
+            + dte.Liquidacion.Encabezado.Totales.Comisiones.ValComNeto || 0);
+}
+
 

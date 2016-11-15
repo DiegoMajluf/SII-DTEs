@@ -33,4 +33,16 @@ exports.dateReviver = function (key, value) {
 exports.getEncabezado = function (dte) {
     return dte.Documento.Encabezado || dte.Exportaciones.Encabezado || dte.Liquidacion.Encabezado;
 };
+exports.getAporteVentasDocumento = function (dte) {
+    var sig = exports.getSignoDocumento(dte);
+    if (sig === 0)
+        return 0;
+    if (dte.Documento)
+        return sig * (dte.Documento.Encabezado.Totales.MntExe || 0 + dte.Documento.Encabezado.Totales.MntNeto || 0);
+    else if (dte.Exportaciones)
+        return sig * dte.Exportaciones.Encabezado.Totales.MntExe;
+    else
+        return sig * (dte.Liquidacion.Encabezado.Totales.Comisiones.ValComExe || 0
+            + dte.Liquidacion.Encabezado.Totales.Comisiones.ValComNeto || 0);
+};
 //# sourceMappingURL=dte-service.js.map
