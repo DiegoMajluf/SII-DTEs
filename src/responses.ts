@@ -3,14 +3,14 @@ import * as periodo from './periodo'
 
 
 
-class InsertDTEResponse {
+export class InsertDTEResponse {
     okDTEs: (dtes.DocumentoIdDoc | dtes.LiquidacionIdDoc | dtes.ExportacionesIdDoc)[];
     errDTEs: { IdDoc: (dtes.DocumentoIdDoc | dtes.LiquidacionIdDoc | dtes.ExportacionesIdDoc), err: any }[];
 
 }
 
 
-class QueryResponsePoint {
+export class QueryResponsePoint {
     periodo: periodo.Periodo
     valores: {
         [moneda: string]: {
