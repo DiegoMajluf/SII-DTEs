@@ -3,8 +3,6 @@ import { DteService } from './dte-service'
 import * as df from 'dateformat'
 
 
-
-
 export class Periodo {
 
     constructor(public fechaIni: Date, public fechaFin: Date, public nombre: string) { }
