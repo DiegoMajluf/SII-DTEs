@@ -18,8 +18,8 @@ export class Periodo {
                 return i;
 
             case TipoPeriodos.quincenales:
-                if (i.getUTCDate() < 15) i.setUTCDate(1)
-                else i.setUTCDate(15)
+                if (i.getUTCDate() < 16) i.setUTCDate(1)
+                else i.setUTCDate(16)
                 return i;
 
             case TipoPeriodos.mensuales:
@@ -69,8 +69,8 @@ export class Periodo {
             case TipoPeriodos.quincenales:
                 for (; i <= hasta; i = next) {
                     next = new Date(i.getTime())
-                    if (i.getUTCDate() < 15) {
-                        next.setUTCDate(15)
+                    if (i.getUTCDate() < 16) {
+                        next.setUTCDate(16)
                         p.push(new Periodo(i, next, df(i, "yyyymm", true) + "-1ra"));
                     } else {
                         next.setUTCMonth(i.getUTCMonth() + 1, 1)
