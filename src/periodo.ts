@@ -1,5 +1,5 @@
 import * as dtes from './dtes'
-import { DteService } from './dte-service'
+import * as DteService from './dte-service'
 import * as df from 'dateformat'
 
 
