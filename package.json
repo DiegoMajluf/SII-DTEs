@@ -4,18 +4,10 @@
   "description": "Objetos compartidos entre plataformas para la aplicacion sales-manager",
   "repository": {
     "type": "git",
-    "url": "https://github.com/DiegoMajluf/SII-DTEs.git"
+    "url": "https://github.com/DiegoMajluf/coreSalesManager.git"
   },
   "license": "ISC",
-  "scripts": {
-    "start": "tsc && node app",
-    "postinstall": "typings install && tsc"
-  },
   "dependencies": {
     "dateformat": "^1.0.12"
-  },
-  "devDependencies": {
-    "typescript": "^2.0.6",
-    "typings": "^2.0.0"
   }
 }
