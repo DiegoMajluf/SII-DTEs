@@ -1,7 +1,7 @@
 {
-  "name": "sii-dtes",
+  "name": "core-sales-manager",
   "version": "0.0.2",
-  "description": "Representación en TypeScript de los documentos tributarios electrónicos",
+  "description": "Objetos compartidos entre plataformas para la aplicacion sales-manager",
   "repository": {
     "type": "git",
     "url": "https://github.com/DiegoMajluf/SII-DTEs.git"
