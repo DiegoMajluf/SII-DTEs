@@ -38,6 +38,10 @@ export class Periodo {
                 i.setUTCMonth(-(i.getUTCMonth() + 1) % 4, 1)
                 return i;
 
+            case TipoPeriodos.semestrales:
+                i.setUTCMonth(-(i.getUTCMonth() + 1) % 6, 1)
+                return i;
+
             case TipoPeriodos.anuales:
                 i.setUTCMonth(0, 1)
                 return i;
@@ -106,6 +110,14 @@ export class Periodo {
                     p.push(new Periodo(i, next, df(i, "yyyy", true) + 'tr' + (i.getUTCMonth() + 1) / 4));
                 }
                 break;
+
+            case TipoPeriodos.semestrales:
+                for (; i <= hasta; i = next) {
+                    next = new Date(i.getTime())
+                    next.setUTCMonth(i.getUTCMonth() + 6)
+                    p.push(new Periodo(i, next, df(i, "yyyy", true) + '-' + (i.getUTCMonth() + 1) / 6));
+                }
+                break;
             case TipoPeriodos.anuales:
                 for (; i <= hasta; i = next) {
                     next = new Date(i.getTime())
@@ -119,6 +131,73 @@ export class Periodo {
 
         return p
     }
+
+    static getPeriodo = (fec: Date, tipo: TipoPeriodos, offset?: number): Periodo => {
+        let p: Periodo;
+        let d = Periodo.getFecIniPeriodo(fec, tipo)
+        let Fini = new Date(d.getTime());
+        let Ffin = new Date(d.getTime());
+        let nombre: string;
+
+        switch (tipo) {
+            case TipoPeriodos.diarias:
+                Fini.setUTCDate(d.getUTCDate() + offset)
+                Ffin.setUTCDate(d.getUTCDate() + offset + 1)
+                nombre = df(Fini, "yyyymmdd", true)
+                break;
+            case TipoPeriodos.semanales:
+                Fini.setUTCDate(d.getUTCDate() + offset * 7)
+                Ffin.setUTCDate(d.getUTCDate() + offset * 7 + 1)
+                nombre = df(Fini, "W", true)
+                break;
+            case TipoPeriodos.quincenales:
+                let meses = Math.ceil(offset / 2)
+                Fini.setUTCMonth(d.getUTCMonth() + meses)
+                Ffin = new Date(Fini.getTime())
+                if (offset / 2 == Math.ceil(offset / 2)) {
+                    Ffin.setUTCDate(16)
+                    nombre = df(Fini, "yyyymm", true) + "-1ra";
+                } else {
+                    Ffin.setUTCMonth(Fini.getUTCMonth() + 1, 1)
+                    nombre = df(Fini, "yyyymm", true) + "-2da";
+                }
+                break;
+            case TipoPeriodos.mensuales:
+                Fini.setUTCMonth(d.getUTCMonth() + offset)
+                Ffin.setUTCMonth(d.getUTCMonth() + 1, 1)
+                nombre = df(Fini, "yyyymm", true)
+                break;
+            case TipoPeriodos.bimensuales:
+                Fini.setUTCMonth(d.getUTCMonth() + 2 * offset)
+                Ffin.setUTCMonth(d.getUTCMonth() + 3 * offset, 1)
+                nombre = df(Fini, "yyyy", true) + 'bi' + (Ffin.getUTCMonth() + 1) / 2
+                break;
+            case TipoPeriodos.trimestrales:
+                Fini.setUTCMonth(d.getUTCMonth() + 3 * offset)
+                Ffin.setUTCMonth(d.getUTCMonth() + 4 * offset, 1)
+                nombre = df(Fini, "yyyy", true) + 'tri' + (Ffin.getUTCMonth() + 1) / 3
+                break;
+            case TipoPeriodos.cuatrimestrales:
+                Fini.setUTCMonth(d.getUTCMonth() + 4 * offset)
+                Ffin.setUTCMonth(d.getUTCMonth() + 5 * offset, 1)
+                nombre = df(Fini, "yyyy", true) + 'tri' + (Ffin.getUTCMonth() + 1) / 4
+                break;
+            case TipoPeriodos.semestrales:
+                Fini.setUTCMonth(d.getUTCMonth() + 6 * offset)
+                Ffin.setUTCMonth(d.getUTCMonth() + 7 * offset, 1)
+                nombre = df(Fini, "yyyy", true) + '-' + (Ffin.getUTCMonth() + 1) / 6
+                break;
+            case TipoPeriodos.anuales:
+                Fini.setUTCMonth(d.getUTCFullYear() + offset)
+                Ffin.setUTCMonth(d.getUTCFullYear() + offset + 1, 1)
+                nombre = df(Fini, "yyyy", true)
+                break;
+
+        }
+
+        return new Periodo(Fini, Ffin, nombre)
+    }
+
 
 }
 
