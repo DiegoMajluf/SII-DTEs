@@ -175,8 +175,8 @@ Periodo.getPeriodo = function (fec, tipo, offset) {
             nombre = df(Fini, "yyyy", true) + '-' + (Ffin.getUTCMonth() + 1) / 6;
             break;
         case TipoPeriodos.anuales:
-            Fini.setUTCMonth(d.getUTCFullYear() + offset);
-            Ffin.setUTCMonth(d.getUTCFullYear() + offset + 1, 1);
+            Fini.setUTCFullYear(d.getUTCFullYear() + offset);
+            Ffin.setUTCFullYear(d.getUTCFullYear() + offset + 1, 1);
             nombre = df(Fini, "yyyy", true);
             break;
     }
