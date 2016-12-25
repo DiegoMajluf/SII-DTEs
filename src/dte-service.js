@@ -1,5 +1,5 @@
 "use strict";
-var dte = require('./dtes');
+var dte = require("./dtes");
 exports.getNombreDocumento = function (tipo) {
     for (var member in dte.DTEType)
         if (member == tipo)

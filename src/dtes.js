@@ -1,5 +1,5 @@
 "use strict";
-var firma = require('./firma_electronica');
+var firma = require("./firma_electronica");
 var EnvioDTE = (function () {
     function EnvioDTE() {
         var _this = this;
@@ -135,6 +135,7 @@ var SubTotDTE = (function () {
     return SubTotDTE;
 }());
 exports.SubTotDTE = SubTotDTE;
+var DOCType;
 (function (DOCType) {
     DOCType[DOCType["FacturaElectronica"] = 33] = "FacturaElectronica";
     DOCType[DOCType["FacturaElectronicadeVentadeBienesyServiciosNoafectosoExentodeIVA"] = 34] = "FacturaElectronicadeVentadeBienesyServiciosNoafectosoExentodeIVA";
@@ -146,8 +147,7 @@ exports.SubTotDTE = SubTotDTE;
     DOCType[DOCType["N_110"] = 110] = "N_110";
     DOCType[DOCType["N_111"] = 111] = "N_111";
     DOCType[DOCType["N_112"] = 112] = "N_112";
-})(exports.DOCType || (exports.DOCType = {}));
-var DOCType = exports.DOCType;
+})(DOCType = exports.DOCType || (exports.DOCType = {}));
 var DTE = (function () {
     function DTE() {
         var _this = this;
@@ -493,16 +493,17 @@ var DocumentoIdDoc = (function () {
     return DocumentoIdDoc;
 }());
 exports.DocumentoIdDoc = DocumentoIdDoc;
+var DocumentoIndNoRebaja;
 (function (DocumentoIndNoRebaja) {
     DocumentoIndNoRebaja[DocumentoIndNoRebaja["NotadeCreditosinDerechoaDescontarDebito"] = 1] = "NotadeCreditosinDerechoaDescontarDebito";
-})(exports.DocumentoIndNoRebaja || (exports.DocumentoIndNoRebaja = {}));
-var DocumentoIndNoRebaja = exports.DocumentoIndNoRebaja;
+})(DocumentoIndNoRebaja = exports.DocumentoIndNoRebaja || (exports.DocumentoIndNoRebaja = {}));
+var DocumentoTipoDespacho;
 (function (DocumentoTipoDespacho) {
     DocumentoTipoDespacho[DocumentoTipoDespacho["DespachoporCuentadelComprador"] = 1] = "DespachoporCuentadelComprador";
     DocumentoTipoDespacho[DocumentoTipoDespacho["DespachoporCuentadelEmisoraInstalacionesdelComprador"] = 2] = "DespachoporCuentadelEmisoraInstalacionesdelComprador";
     DocumentoTipoDespacho[DocumentoTipoDespacho["DespachoporCuentadelEmisoraOtrasInstalaciones"] = 3] = "DespachoporCuentadelEmisoraOtrasInstalaciones";
-})(exports.DocumentoTipoDespacho || (exports.DocumentoTipoDespacho = {}));
-var DocumentoTipoDespacho = exports.DocumentoTipoDespacho;
+})(DocumentoTipoDespacho = exports.DocumentoTipoDespacho || (exports.DocumentoTipoDespacho = {}));
+var DocumentoIndTraslado;
 (function (DocumentoIndTraslado) {
     DocumentoIndTraslado[DocumentoIndTraslado["OperacionConstituyeVenta"] = 1] = "OperacionConstituyeVenta";
     DocumentoIndTraslado[DocumentoIndTraslado["VentaporEfectuar"] = 2] = "VentaporEfectuar";
@@ -513,24 +514,24 @@ var DocumentoTipoDespacho = exports.DocumentoTipoDespacho;
     DocumentoIndTraslado[DocumentoIndTraslado["GuiadeDevolucion"] = 7] = "GuiadeDevolucion";
     DocumentoIndTraslado[DocumentoIndTraslado["N_8"] = 8] = "N_8";
     DocumentoIndTraslado[DocumentoIndTraslado["N_9"] = 9] = "N_9";
-})(exports.DocumentoIndTraslado || (exports.DocumentoIndTraslado = {}));
-var DocumentoIndTraslado = exports.DocumentoIndTraslado;
+})(DocumentoIndTraslado = exports.DocumentoIndTraslado || (exports.DocumentoIndTraslado = {}));
+var DocumentoIndServicio;
 (function (DocumentoIndServicio) {
     DocumentoIndServicio[DocumentoIndServicio["FacturaciondeServiciosPeriodicosDomiciliarios"] = 1] = "FacturaciondeServiciosPeriodicosDomiciliarios";
     DocumentoIndServicio[DocumentoIndServicio["FacturaciondeOtrosServiciosPeriodicos"] = 2] = "FacturaciondeOtrosServiciosPeriodicos";
     DocumentoIndServicio[DocumentoIndServicio["FacturadeServicio"] = 3] = "FacturadeServicio";
-})(exports.DocumentoIndServicio || (exports.DocumentoIndServicio = {}));
-var DocumentoIndServicio = exports.DocumentoIndServicio;
+})(DocumentoIndServicio = exports.DocumentoIndServicio || (exports.DocumentoIndServicio = {}));
+var DocumentoMntBruto;
 (function (DocumentoMntBruto) {
     DocumentoMntBruto[DocumentoMntBruto["MontodeLineasdeDetalleCorrespondeaValoresBrutosIVAImpuestosAdicionales"] = 1] = "MontodeLineasdeDetalleCorrespondeaValoresBrutosIVAImpuestosAdicionales";
-})(exports.DocumentoMntBruto || (exports.DocumentoMntBruto = {}));
-var DocumentoMntBruto = exports.DocumentoMntBruto;
+})(DocumentoMntBruto = exports.DocumentoMntBruto || (exports.DocumentoMntBruto = {}));
+var DocumentoFmaPago;
 (function (DocumentoFmaPago) {
     DocumentoFmaPago[DocumentoFmaPago["PagoContado"] = 1] = "PagoContado";
     DocumentoFmaPago[DocumentoFmaPago["PagoCredito"] = 2] = "PagoCredito";
     DocumentoFmaPago[DocumentoFmaPago["SinCosto"] = 3] = "SinCosto";
-})(exports.DocumentoFmaPago || (exports.DocumentoFmaPago = {}));
-var DocumentoFmaPago = exports.DocumentoFmaPago;
+})(DocumentoFmaPago = exports.DocumentoFmaPago || (exports.DocumentoFmaPago = {}));
+var DTEType;
 (function (DTEType) {
     DTEType[DTEType["FacturaElectronica"] = 33] = "FacturaElectronica";
     DTEType[DTEType["FacturaElectronicadeVentadeBienesyServiciosNoafectosoExentodeIVA"] = 34] = "FacturaElectronicadeVentadeBienesyServiciosNoafectosoExentodeIVA";
@@ -538,8 +539,7 @@ var DocumentoFmaPago = exports.DocumentoFmaPago;
     DTEType[DTEType["GuiadeDespachoElectronica"] = 52] = "GuiadeDespachoElectronica";
     DTEType[DTEType["NotadeDebitoElectronica"] = 56] = "NotadeDebitoElectronica";
     DTEType[DTEType["NotadeCreditoElectronica"] = 61] = "NotadeCreditoElectronica";
-})(exports.DTEType || (exports.DTEType = {}));
-var DTEType = exports.DTEType;
+})(DTEType = exports.DTEType || (exports.DTEType = {}));
 var DocumentoMntPagos = (function () {
     function DocumentoMntPagos() {
         var _this = this;
@@ -693,13 +693,13 @@ var DocumentoGuiaExport = (function () {
     return DocumentoGuiaExport;
 }());
 exports.DocumentoGuiaExport = DocumentoGuiaExport;
+var DocumentoCdgTraslado;
 (function (DocumentoCdgTraslado) {
     DocumentoCdgTraslado[DocumentoCdgTraslado["N_1"] = 1] = "N_1";
     DocumentoCdgTraslado[DocumentoCdgTraslado["N_2"] = 2] = "N_2";
     DocumentoCdgTraslado[DocumentoCdgTraslado["N_3"] = 3] = "N_3";
     DocumentoCdgTraslado[DocumentoCdgTraslado["N_4"] = 4] = "N_4";
-})(exports.DocumentoCdgTraslado || (exports.DocumentoCdgTraslado = {}));
-var DocumentoCdgTraslado = exports.DocumentoCdgTraslado;
+})(DocumentoCdgTraslado = exports.DocumentoCdgTraslado || (exports.DocumentoCdgTraslado = {}));
 var DocumentoReceptor = (function () {
     function DocumentoReceptor() {
         var _this = this;
@@ -1258,6 +1258,7 @@ var DocumentoImptoReten = (function () {
     return DocumentoImptoReten;
 }());
 exports.DocumentoImptoReten = DocumentoImptoReten;
+var ImpAdicDTEType;
 (function (ImpAdicDTEType) {
     ImpAdicDTEType[ImpAdicDTEType["IVAMargenComercializacionFacturaVentadelContribuyenteF29C039"] = 14] = "IVAMargenComercializacionFacturaVentadelContribuyenteF29C039";
     ImpAdicDTEType[ImpAdicDTEType["IVARetenidoTotalFacturaCompradelContribuyenteF29C039"] = 15] = "IVARetenidoTotalFacturaCompradelContribuyenteF29C039";
@@ -1300,8 +1301,7 @@ exports.DocumentoImptoReten = DocumentoImptoReten;
     ImpAdicDTEType[ImpAdicDTEType["N_361"] = 361] = "N_361";
     ImpAdicDTEType[ImpAdicDTEType["N_371"] = 371] = "N_371";
     ImpAdicDTEType[ImpAdicDTEType["N_481"] = 481] = "N_481";
-})(exports.ImpAdicDTEType || (exports.ImpAdicDTEType = {}));
-var ImpAdicDTEType = exports.ImpAdicDTEType;
+})(ImpAdicDTEType = exports.ImpAdicDTEType || (exports.ImpAdicDTEType = {}));
 var DocumentoComisionesTotales = (function () {
     function DocumentoComisionesTotales() {
         var _this = this;
@@ -1600,6 +1600,7 @@ var DocumentoDetalle = (function () {
     return DocumentoDetalle;
 }());
 exports.DocumentoDetalle = DocumentoDetalle;
+var DocumentoIndExe;
 (function (DocumentoIndExe) {
     DocumentoIndExe[DocumentoIndExe["ElProductooServicioNOESTAAfectoaIVA"] = 1] = "ElProductooServicioNOESTAAfectoaIVA";
     DocumentoIndExe[DocumentoIndExe["ElProductooServicioNOESFacturable"] = 2] = "ElProductooServicioNOESFacturable";
@@ -1607,8 +1608,7 @@ exports.DocumentoDetalle = DocumentoDetalle;
     DocumentoIndExe[DocumentoIndExe["ElproductoNoConstituyeVenta"] = 4] = "ElproductoNoConstituyeVenta";
     DocumentoIndExe[DocumentoIndExe["ItemaRebajar"] = 5] = "ItemaRebajar";
     DocumentoIndExe[DocumentoIndExe["Nofacturablesnegativos"] = 6] = "Nofacturablesnegativos";
-})(exports.DocumentoIndExe || (exports.DocumentoIndExe = {}));
-var DocumentoIndExe = exports.DocumentoIndExe;
+})(DocumentoIndExe = exports.DocumentoIndExe || (exports.DocumentoIndExe = {}));
 var DocumentoCdgItem = (function () {
     function DocumentoCdgItem() {
         var _this = this;
@@ -1894,11 +1894,11 @@ var DocumentoDscRcgGlobal = (function () {
     return DocumentoDscRcgGlobal;
 }());
 exports.DocumentoDscRcgGlobal = DocumentoDscRcgGlobal;
+var DocumentoIndExeDR;
 (function (DocumentoIndExeDR) {
     DocumentoIndExeDR[DocumentoIndExeDR["DescuentoRecargoGlobalNoAfecto"] = 1] = "DescuentoRecargoGlobalNoAfecto";
     DocumentoIndExeDR[DocumentoIndExeDR["DescuentoRecargoNoFacturable"] = 2] = "DescuentoRecargoNoFacturable";
-})(exports.DocumentoIndExeDR || (exports.DocumentoIndExeDR = {}));
-var DocumentoIndExeDR = exports.DocumentoIndExeDR;
+})(DocumentoIndExeDR = exports.DocumentoIndExeDR || (exports.DocumentoIndExeDR = {}));
 var DocumentoReferencia = (function () {
     function DocumentoReferencia() {
         var _this = this;
@@ -1957,16 +1957,16 @@ var DocumentoReferencia = (function () {
     return DocumentoReferencia;
 }());
 exports.DocumentoReferencia = DocumentoReferencia;
+var DocumentoIndGlobal;
 (function (DocumentoIndGlobal) {
     DocumentoIndGlobal[DocumentoIndGlobal["ElDocumentohaceReferenciaaunConjuntodeDocumentosTributariosdelMismoTipo"] = 1] = "ElDocumentohaceReferenciaaunConjuntodeDocumentosTributariosdelMismoTipo";
-})(exports.DocumentoIndGlobal || (exports.DocumentoIndGlobal = {}));
-var DocumentoIndGlobal = exports.DocumentoIndGlobal;
+})(DocumentoIndGlobal = exports.DocumentoIndGlobal || (exports.DocumentoIndGlobal = {}));
+var DocumentoCodRef;
 (function (DocumentoCodRef) {
     DocumentoCodRef[DocumentoCodRef["AnulaDocumentodeReferencia"] = 1] = "AnulaDocumentodeReferencia";
     DocumentoCodRef[DocumentoCodRef["CorrigeTextodelDocumentodeReferencia"] = 2] = "CorrigeTextodelDocumentodeReferencia";
     DocumentoCodRef[DocumentoCodRef["CorrigeMontos"] = 3] = "CorrigeMontos";
-})(exports.DocumentoCodRef || (exports.DocumentoCodRef = {}));
-var DocumentoCodRef = exports.DocumentoCodRef;
+})(DocumentoCodRef = exports.DocumentoCodRef || (exports.DocumentoCodRef = {}));
 var DocumentoComisiones = (function () {
     function DocumentoComisiones() {
         var _this = this;
@@ -2549,26 +2549,26 @@ var LiquidacionIdDoc = (function () {
     return LiquidacionIdDoc;
 }());
 exports.LiquidacionIdDoc = LiquidacionIdDoc;
+var LiquidacionIndServicio;
 (function (LiquidacionIndServicio) {
     LiquidacionIndServicio[LiquidacionIndServicio["FacturaciondeServiciosPeriodicosDomiciliarios"] = 1] = "FacturaciondeServiciosPeriodicosDomiciliarios";
     LiquidacionIndServicio[LiquidacionIndServicio["FacturaciondeOtrosServiciosPeriodicos"] = 2] = "FacturaciondeOtrosServiciosPeriodicos";
     LiquidacionIndServicio[LiquidacionIndServicio["FacturadeServicio"] = 3] = "FacturadeServicio";
-})(exports.LiquidacionIndServicio || (exports.LiquidacionIndServicio = {}));
-var LiquidacionIndServicio = exports.LiquidacionIndServicio;
+})(LiquidacionIndServicio = exports.LiquidacionIndServicio || (exports.LiquidacionIndServicio = {}));
+var LiquidacionMntBruto;
 (function (LiquidacionMntBruto) {
     LiquidacionMntBruto[LiquidacionMntBruto["MontodeLineasdeDetalleCorrespondeaValoresBrutosIVAImpuestosAdicionales"] = 1] = "MontodeLineasdeDetalleCorrespondeaValoresBrutosIVAImpuestosAdicionales";
-})(exports.LiquidacionMntBruto || (exports.LiquidacionMntBruto = {}));
-var LiquidacionMntBruto = exports.LiquidacionMntBruto;
+})(LiquidacionMntBruto = exports.LiquidacionMntBruto || (exports.LiquidacionMntBruto = {}));
+var LiquidacionFmaPago;
 (function (LiquidacionFmaPago) {
     LiquidacionFmaPago[LiquidacionFmaPago["PagoContado"] = 1] = "PagoContado";
     LiquidacionFmaPago[LiquidacionFmaPago["PagoCredito"] = 2] = "PagoCredito";
     LiquidacionFmaPago[LiquidacionFmaPago["SinCosto"] = 3] = "SinCosto";
-})(exports.LiquidacionFmaPago || (exports.LiquidacionFmaPago = {}));
-var LiquidacionFmaPago = exports.LiquidacionFmaPago;
+})(LiquidacionFmaPago = exports.LiquidacionFmaPago || (exports.LiquidacionFmaPago = {}));
+var LIQType;
 (function (LIQType) {
     LIQType[LIQType["N_43"] = 43] = "N_43";
-})(exports.LIQType || (exports.LIQType = {}));
-var LIQType = exports.LIQType;
+})(LIQType = exports.LIQType || (exports.LIQType = {}));
 var LiquidacionMntPagos = (function () {
     function LiquidacionMntPagos() {
         var _this = this;
@@ -3024,6 +3024,7 @@ var LiquidacionDetalle = (function () {
     return LiquidacionDetalle;
 }());
 exports.LiquidacionDetalle = LiquidacionDetalle;
+var LiquidacionIndExe;
 (function (LiquidacionIndExe) {
     LiquidacionIndExe[LiquidacionIndExe["ElProductooServicioNOESTAAfectoaIVA"] = 1] = "ElProductooServicioNOESTAAfectoaIVA";
     LiquidacionIndExe[LiquidacionIndExe["ElProductooServicioNOESFacturable"] = 2] = "ElProductooServicioNOESFacturable";
@@ -3031,8 +3032,7 @@ exports.LiquidacionDetalle = LiquidacionDetalle;
     LiquidacionIndExe[LiquidacionIndExe["ElproductoNoConstituyeVenta"] = 4] = "ElproductoNoConstituyeVenta";
     LiquidacionIndExe[LiquidacionIndExe["ItemaRebajar"] = 5] = "ItemaRebajar";
     LiquidacionIndExe[LiquidacionIndExe["Nofacturablesnegativos"] = 6] = "Nofacturablesnegativos";
-})(exports.LiquidacionIndExe || (exports.LiquidacionIndExe = {}));
-var LiquidacionIndExe = exports.LiquidacionIndExe;
+})(LiquidacionIndExe = exports.LiquidacionIndExe || (exports.LiquidacionIndExe = {}));
 var LiquidacionCdgItem = (function () {
     function LiquidacionCdgItem() {
         var _this = this;
@@ -3194,16 +3194,16 @@ var LiquidacionReferencia = (function () {
     return LiquidacionReferencia;
 }());
 exports.LiquidacionReferencia = LiquidacionReferencia;
+var LiquidacionIndGlobal;
 (function (LiquidacionIndGlobal) {
     LiquidacionIndGlobal[LiquidacionIndGlobal["ElDocumentohaceReferenciaaunConjuntodeDocumentosTributariosdelMismoTipo"] = 1] = "ElDocumentohaceReferenciaaunConjuntodeDocumentosTributariosdelMismoTipo";
-})(exports.LiquidacionIndGlobal || (exports.LiquidacionIndGlobal = {}));
-var LiquidacionIndGlobal = exports.LiquidacionIndGlobal;
+})(LiquidacionIndGlobal = exports.LiquidacionIndGlobal || (exports.LiquidacionIndGlobal = {}));
+var LiquidacionCodRef;
 (function (LiquidacionCodRef) {
     LiquidacionCodRef[LiquidacionCodRef["AnulaDocumentodeReferencia"] = 1] = "AnulaDocumentodeReferencia";
     LiquidacionCodRef[LiquidacionCodRef["CorrigeTextodelDocumentodeReferencia"] = 2] = "CorrigeTextodelDocumentodeReferencia";
     LiquidacionCodRef[LiquidacionCodRef["CorrigeMontos"] = 3] = "CorrigeMontos";
-})(exports.LiquidacionCodRef || (exports.LiquidacionCodRef = {}));
-var LiquidacionCodRef = exports.LiquidacionCodRef;
+})(LiquidacionCodRef = exports.LiquidacionCodRef || (exports.LiquidacionCodRef = {}));
 var LiquidacionComisiones = (function () {
     function LiquidacionComisiones() {
         var _this = this;
@@ -3806,30 +3806,30 @@ var ExportacionesIdDoc = (function () {
     return ExportacionesIdDoc;
 }());
 exports.ExportacionesIdDoc = ExportacionesIdDoc;
+var ExportacionesTipoDespacho;
 (function (ExportacionesTipoDespacho) {
     ExportacionesTipoDespacho[ExportacionesTipoDespacho["DespachoporCuentadelComprador"] = 1] = "DespachoporCuentadelComprador";
     ExportacionesTipoDespacho[ExportacionesTipoDespacho["DespachoporCuentadelEmisoraInstalacionesdelComprador"] = 2] = "DespachoporCuentadelEmisoraInstalacionesdelComprador";
     ExportacionesTipoDespacho[ExportacionesTipoDespacho["DespachoporCuentadelEmisoraOtrasInstalaciones"] = 3] = "DespachoporCuentadelEmisoraOtrasInstalaciones";
-})(exports.ExportacionesTipoDespacho || (exports.ExportacionesTipoDespacho = {}));
-var ExportacionesTipoDespacho = exports.ExportacionesTipoDespacho;
+})(ExportacionesTipoDespacho = exports.ExportacionesTipoDespacho || (exports.ExportacionesTipoDespacho = {}));
+var ExportacionesIndServicio;
 (function (ExportacionesIndServicio) {
     ExportacionesIndServicio[ExportacionesIndServicio["FacturadeServicio"] = 3] = "FacturadeServicio";
     ExportacionesIndServicio[ExportacionesIndServicio["N_4"] = 4] = "N_4";
     ExportacionesIndServicio[ExportacionesIndServicio["N_5"] = 5] = "N_5";
-})(exports.ExportacionesIndServicio || (exports.ExportacionesIndServicio = {}));
-var ExportacionesIndServicio = exports.ExportacionesIndServicio;
+})(ExportacionesIndServicio = exports.ExportacionesIndServicio || (exports.ExportacionesIndServicio = {}));
+var ExportacionesFmaPago;
 (function (ExportacionesFmaPago) {
     ExportacionesFmaPago[ExportacionesFmaPago["PagoContado"] = 1] = "PagoContado";
     ExportacionesFmaPago[ExportacionesFmaPago["PagoCredito"] = 2] = "PagoCredito";
     ExportacionesFmaPago[ExportacionesFmaPago["SinCosto"] = 3] = "SinCosto";
-})(exports.ExportacionesFmaPago || (exports.ExportacionesFmaPago = {}));
-var ExportacionesFmaPago = exports.ExportacionesFmaPago;
+})(ExportacionesFmaPago = exports.ExportacionesFmaPago || (exports.ExportacionesFmaPago = {}));
+var EXPType;
 (function (EXPType) {
     EXPType[EXPType["N_110"] = 110] = "N_110";
     EXPType[EXPType["N_111"] = 111] = "N_111";
     EXPType[EXPType["N_112"] = 112] = "N_112";
-})(exports.EXPType || (exports.EXPType = {}));
-var EXPType = exports.EXPType;
+})(EXPType = exports.EXPType || (exports.EXPType = {}));
 var ExportacionesMntPagos = (function () {
     function ExportacionesMntPagos() {
         var _this = this;
@@ -4585,6 +4585,7 @@ var ExportacionesDetalle = (function () {
     return ExportacionesDetalle;
 }());
 exports.ExportacionesDetalle = ExportacionesDetalle;
+var ExportacionesIndExe;
 (function (ExportacionesIndExe) {
     ExportacionesIndExe[ExportacionesIndExe["ElProductooServicioNOESTAAfectoaIVA"] = 1] = "ElProductooServicioNOESTAAfectoaIVA";
     ExportacionesIndExe[ExportacionesIndExe["ElProductooServicioNOESFacturable"] = 2] = "ElProductooServicioNOESFacturable";
@@ -4592,8 +4593,7 @@ exports.ExportacionesDetalle = ExportacionesDetalle;
     ExportacionesIndExe[ExportacionesIndExe["ElproductoNoConstituyeVenta"] = 4] = "ElproductoNoConstituyeVenta";
     ExportacionesIndExe[ExportacionesIndExe["ItemaRebajar"] = 5] = "ItemaRebajar";
     ExportacionesIndExe[ExportacionesIndExe["Nofacturablesnegativos"] = 6] = "Nofacturablesnegativos";
-})(exports.ExportacionesIndExe || (exports.ExportacionesIndExe = {}));
-var ExportacionesIndExe = exports.ExportacionesIndExe;
+})(ExportacionesIndExe = exports.ExportacionesIndExe || (exports.ExportacionesIndExe = {}));
 var ExportacionesCdgItem = (function () {
     function ExportacionesCdgItem() {
         var _this = this;
@@ -4851,11 +4851,11 @@ var ExportacionesDscRcgGlobal = (function () {
     return ExportacionesDscRcgGlobal;
 }());
 exports.ExportacionesDscRcgGlobal = ExportacionesDscRcgGlobal;
+var ExportacionesIndExeDR;
 (function (ExportacionesIndExeDR) {
     ExportacionesIndExeDR[ExportacionesIndExeDR["DescuentoRecargoGlobalNoAfecto"] = 1] = "DescuentoRecargoGlobalNoAfecto";
     ExportacionesIndExeDR[ExportacionesIndExeDR["DescuentoRecargoNoFacturable"] = 2] = "DescuentoRecargoNoFacturable";
-})(exports.ExportacionesIndExeDR || (exports.ExportacionesIndExeDR = {}));
-var ExportacionesIndExeDR = exports.ExportacionesIndExeDR;
+})(ExportacionesIndExeDR = exports.ExportacionesIndExeDR || (exports.ExportacionesIndExeDR = {}));
 var ExportacionesReferencia = (function () {
     function ExportacionesReferencia() {
         var _this = this;
@@ -4920,16 +4920,16 @@ var ExportacionesReferencia = (function () {
     return ExportacionesReferencia;
 }());
 exports.ExportacionesReferencia = ExportacionesReferencia;
+var ExportacionesIndGlobal;
 (function (ExportacionesIndGlobal) {
     ExportacionesIndGlobal[ExportacionesIndGlobal["ElDocumentohaceReferenciaaunConjuntodeDocumentosTributariosdelMismoTipo"] = 1] = "ElDocumentohaceReferenciaaunConjuntodeDocumentosTributariosdelMismoTipo";
-})(exports.ExportacionesIndGlobal || (exports.ExportacionesIndGlobal = {}));
-var ExportacionesIndGlobal = exports.ExportacionesIndGlobal;
+})(ExportacionesIndGlobal = exports.ExportacionesIndGlobal || (exports.ExportacionesIndGlobal = {}));
+var ExportacionesCodRef;
 (function (ExportacionesCodRef) {
     ExportacionesCodRef[ExportacionesCodRef["AnulaDocumentodeReferencia"] = 1] = "AnulaDocumentodeReferencia";
     ExportacionesCodRef[ExportacionesCodRef["CorrigeTextodelDocumentodeReferencia"] = 2] = "CorrigeTextodelDocumentodeReferencia";
     ExportacionesCodRef[ExportacionesCodRef["CorrigeMontos"] = 3] = "CorrigeMontos";
-})(exports.ExportacionesCodRef || (exports.ExportacionesCodRef = {}));
-var ExportacionesCodRef = exports.ExportacionesCodRef;
+})(ExportacionesCodRef = exports.ExportacionesCodRef || (exports.ExportacionesCodRef = {}));
 var ExportacionesTED = (function () {
     function ExportacionesTED() {
         var _this = this;
