@@ -151,7 +151,7 @@ Periodo.getPeriodo = function (fec, tipo, offset) {
             break;
         case TipoPeriodos.mensuales:
             Fini.setUTCMonth(d.getUTCMonth() + offset);
-            Ffin.setUTCMonth(d.getUTCMonth() + 1, 1);
+            Ffin.setUTCMonth(d.getUTCMonth() + offset + 1, 1);
             nombre = df(Fini, "yyyymm", true);
             break;
         case TipoPeriodos.bimensuales:
