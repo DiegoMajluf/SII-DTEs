@@ -140,7 +140,7 @@ Periodo.getPeriodo = function (fec, tipo, offset) {
             var meses = Math.ceil(offset / 2);
             Fini.setUTCMonth(d.getUTCMonth() + meses);
             Ffin = new Date(Fini.getTime());
-            if (offset / 2 == Math.ceil(offset / 2)) {
+            if (Fini.getUTCDate() == 1) {
                 Ffin.setUTCDate(16);
                 nombre = df(Fini, "yyyymm", true) + "-1ra";
             }
