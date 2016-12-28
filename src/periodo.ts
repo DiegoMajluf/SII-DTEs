@@ -147,7 +147,7 @@ export class Periodo {
                 break;
             case TipoPeriodos.semanales:
                 Fini.setUTCDate(d.getUTCDate() + offset * 7)
-                Ffin.setUTCDate(d.getUTCDate() + offset * 7 + 1)
+                Ffin.setUTCDate(d.getUTCDate() + offset * 7 + 7)
                 nombre = df(Fini, "W", true)
                 break;
             case TipoPeriodos.quincenales:
