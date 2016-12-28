@@ -125,8 +125,6 @@ Periodo.getPeriodo = function (fec, tipo, offset) {
     var Fini = new Date(d.getTime());
     var Ffin = new Date(d.getTime());
     var nombre;
-    if (offset)
-        offset--;
     switch (tipo) {
         case TipoPeriodos.diarias:
             Fini.setUTCDate(d.getUTCDate() + offset);
