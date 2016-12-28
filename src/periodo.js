@@ -137,8 +137,9 @@ Periodo.getPeriodo = function (fec, tipo, offset) {
             nombre = df(Fini, "W", true);
             break;
         case TipoPeriodos.quincenales:
-            var meses = Math.ceil(offset / 2);
-            Fini.setUTCMonth(d.getUTCMonth() + meses);
+            var meses = offset == 0 ? 0 : Math.ceil(Math.abs(offset) / 2) * offset / Math.abs(offset);
+            var quin = meses - offset / 2;
+            Fini.setUTCMonth(d.getUTCMonth() + meses, Fini.getDate() == 1 && quin == 1 ? 16 : 1);
             Ffin = new Date(Fini.getTime());
             if (Fini.getUTCDate() == 1) {
                 Ffin.setUTCDate(16);

@@ -14,7 +14,7 @@ export class Periodo {
                 return i;
 
             case TipoPeriodos.semanales:
-                i.setUTCDate(i.getUTCDate() - (i.getUTCDay() == 0 ? 6 : i.getUTCDay() - 1 ))
+                i.setUTCDate(i.getUTCDate() - (i.getUTCDay() == 0 ? 6 : i.getUTCDay() - 1))
                 return i;
 
             case TipoPeriodos.quincenales:
@@ -151,8 +151,9 @@ export class Periodo {
                 nombre = df(Fini, "W", true)
                 break;
             case TipoPeriodos.quincenales:
-                let meses = Math.ceil(offset / 2)
-                Fini.setUTCMonth(d.getUTCMonth() + meses)
+                let meses = offset == 0 ? 0 : Math.ceil(Math.abs(offset) / 2) * offset / Math.abs(offset)
+                let quin = meses - offset / 2;
+                Fini.setUTCMonth(d.getUTCMonth() + meses, Fini.getDate() == 1 && quin == 1 ? 16 : 1)
                 Ffin = new Date(Fini.getTime())
                 if (Fini.getUTCDate() == 1) {
                     Ffin.setUTCDate(16)
