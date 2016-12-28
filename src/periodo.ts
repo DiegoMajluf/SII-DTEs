@@ -163,33 +163,33 @@ export class Periodo {
                 }
                 break;
             case TipoPeriodos.mensuales:
-                Fini.setUTCMonth(d.getUTCMonth() + offset)
-                Ffin.setUTCMonth(d.getUTCMonth() + offset + 1, 1)
+                Fini.setUTCMonth(d.getUTCMonth() + offset - 1)
+                Ffin.setUTCMonth(d.getUTCMonth() + offset, 1)
                 nombre = df(Fini, "yyyymm", true)
                 break;
             case TipoPeriodos.bimensuales:
-                Fini.setUTCMonth(d.getUTCMonth() + 2 * offset)
+                Fini.setUTCMonth(d.getUTCMonth() + 2 * offset - 2)
                 Ffin.setUTCMonth(d.getUTCMonth() + 3 * offset, 1)
                 nombre = df(Fini, "yyyy", true) + 'bi' + (Ffin.getUTCMonth() + 1) / 2
                 break;
             case TipoPeriodos.trimestrales:
-                Fini.setUTCMonth(d.getUTCMonth() + 3 * offset)
+                Fini.setUTCMonth(d.getUTCMonth() + 3 * offset - 3)
                 Ffin.setUTCMonth(d.getUTCMonth() + 4 * offset, 1)
                 nombre = df(Fini, "yyyy", true) + 'tri' + (Ffin.getUTCMonth() + 1) / 3
                 break;
             case TipoPeriodos.cuatrimestrales:
-                Fini.setUTCMonth(d.getUTCMonth() + 4 * offset)
+                Fini.setUTCMonth(d.getUTCMonth() + 4 * offset - 4)
                 Ffin.setUTCMonth(d.getUTCMonth() + 5 * offset, 1)
                 nombre = df(Fini, "yyyy", true) + 'tri' + (Ffin.getUTCMonth() + 1) / 4
                 break;
             case TipoPeriodos.semestrales:
-                Fini.setUTCMonth(d.getUTCMonth() + 6 * offset)
+                Fini.setUTCMonth(d.getUTCMonth() + 6 * offset - 6)
                 Ffin.setUTCMonth(d.getUTCMonth() + 7 * offset, 1)
                 nombre = df(Fini, "yyyy", true) + '-' + (Ffin.getUTCMonth() + 1) / 6
                 break;
             case TipoPeriodos.anuales:
-                Fini.setUTCFullYear(d.getUTCFullYear() + offset)
-                Ffin.setUTCFullYear(d.getUTCFullYear() + offset + 1, 1)
+                Fini.setUTCFullYear(d.getUTCFullYear() + offset - 1)
+                Ffin.setUTCFullYear(d.getUTCFullYear() + offset, 1)
                 nombre = df(Fini, "yyyy", true)
                 break;
 
