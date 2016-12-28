@@ -152,8 +152,10 @@ export class Periodo {
                 break;
             case TipoPeriodos.quincenales:
                 let meses = offset == 0 ? 0 : Math.ceil(Math.abs(offset) / 2) * offset / Math.abs(offset)
-                let quin = meses - offset / 2;
-                Fini.setUTCMonth(d.getUTCMonth() + meses, Fini.getDate() == 1 && quin == 1 ? 16 : 1)
+                Fini.setUTCMonth(d.getUTCMonth() + meses)
+                if (meses - offset / 2 !== 0)
+                    if (Fini.getDate() == 1) Fini.setUTCDate(16)
+                    else Fini.setUTCMonth(d.getUTCMonth() + 1, 1)
                 Ffin = new Date(Fini.getTime())
                 if (Fini.getUTCDate() == 1) {
                     Ffin.setUTCDate(16)
