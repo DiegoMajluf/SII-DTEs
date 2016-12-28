@@ -14,7 +14,7 @@ Periodo.getFecIniPeriodo = function (fec, tipo) {
         case TipoPeriodos.diarias:
             return i;
         case TipoPeriodos.semanales:
-            i.setUTCDate(i.getUTCDate() - i.getUTCDay() == 0 ? i.getUTCDay() - 1 : 6);
+            i.setUTCDate(i.getUTCDate() - (i.getUTCDay() == 0 ? 6 : i.getUTCDay() - 1));
             return i;
         case TipoPeriodos.quincenales:
             if (i.getUTCDate() < 16)
