@@ -26,16 +26,16 @@ Periodo.getFecIniPeriodo = function (fec, tipo) {
             i.setUTCDate(1);
             return i;
         case TipoPeriodos.bimensuales:
-            i.setUTCMonth(-(i.getUTCMonth() + 1) % 2, 1);
+            i.setUTCMonth(i.getUTCMonth() - i.getUTCMonth() % 2, 1);
             return i;
         case TipoPeriodos.trimestrales:
-            i.setUTCMonth(-(i.getUTCMonth() + 1) % 3, 1);
+            i.setUTCMonth(i.getUTCMonth() - i.getUTCMonth() % 3, 1);
             return i;
         case TipoPeriodos.cuatrimestrales:
-            i.setUTCMonth(-(i.getUTCMonth() + 1) % 4, 1);
+            i.setUTCMonth(i.getUTCMonth() - i.getUTCMonth() % 4, 1);
             return i;
         case TipoPeriodos.semestrales:
-            i.setUTCMonth(-(i.getUTCMonth() + 1) % 6, 1);
+            i.setUTCMonth(i.getUTCMonth() - i.getUTCMonth() % 6, 1);
             return i;
         case TipoPeriodos.anuales:
             i.setUTCMonth(0, 1);
@@ -139,11 +139,16 @@ Periodo.getPeriodo = function (fec, tipo, offset) {
         case TipoPeriodos.quincenales:
             var meses = offset == 0 ? 0 : Math.ceil(Math.abs(offset) / 2) * offset / Math.abs(offset);
             Fini.setUTCMonth(d.getUTCMonth() + meses);
-            if (meses - offset / 2 !== 0)
-                if (Fini.getDate() == 1)
+            if (meses - offset / 2 !== 0 && offset < 0)
+                if (Fini.getUTCDate() == 1)
                     Fini.setUTCDate(16);
                 else
-                    Fini.setUTCMonth(d.getUTCMonth() + 1, 1);
+                    Fini.setUTCMonth(Fini.getUTCMonth() + 1, 1);
+            else if (meses - offset / 2 !== 0 && offset > 0)
+                if (Fini.getUTCDate() == 1)
+                    Fini.setUTCMonth(Fini.getUTCMonth() - 1, 16);
+                else
+                    Fini.setUTCDate(1);
             Ffin = new Date(Fini.getTime());
             if (Fini.getUTCDate() == 1) {
                 Ffin.setUTCDate(16);
