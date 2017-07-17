@@ -132,7 +132,7 @@ export class Periodo {
         return p
     }
 
-    static getPeriodo = (fec: Date, tipo: TipoPeriodos, offset?: number): Periodo => {
+    static getPeriodo = (fec: Date, tipo: TipoPeriodos, offset: number = 0): Periodo => {
         let p: Periodo;
         let d = Periodo.getFecIniPeriodo(fec, tipo)
         let Fini = new Date(d.getTime());

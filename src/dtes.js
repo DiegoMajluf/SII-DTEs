@@ -1,4 +1,5 @@
 "use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
 var firma = require("./firma_electronica");
 var EnvioDTE = (function () {
     function EnvioDTE() {

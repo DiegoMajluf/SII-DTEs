@@ -1,4 +1,5 @@
 "use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
 var Signature = (function () {
     function Signature() {
         var _this = this;

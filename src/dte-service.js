@@ -1,4 +1,5 @@
 "use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
 var dte = require("./dtes");
 exports.getNombreDocumento = function (tipo) {
     for (var member in dte.DTEType)

@@ -1,4 +1,5 @@
 "use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
 var dtes = require("./src/dtes");
 var firma = require("./src/firma_electronica");
 var periodos = require("./src/periodo");
