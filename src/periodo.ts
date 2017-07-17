@@ -93,21 +93,21 @@ export class Periodo {
                 for (; i <= hasta; i = new Date(next.getTime())) {
                     next = new Date(i.getTime())
                     next.setUTCMonth(i.getUTCMonth() + 2)
-                    p.push(new Periodo(i, next, df(i, "yyyy", true) + 'bi' + (i.getUTCMonth() + 1) / 2));
+                    p.push(new Periodo(i, next, df(i, "yyyy", true) + 'bi' + (Math.floor(i.getUTCMonth() / 2) + 1)));
                 }
                 break;
             case TipoPeriodos.trimestrales:
                 for (; i <= hasta; i = new Date(next.getTime())) {
                     next = new Date(i.getTime())
                     next.setUTCMonth(i.getUTCMonth() + 3)
-                    p.push(new Periodo(i, next, df(i, "yyyy", true) + 'qt' + (i.getUTCMonth() + 1) / 3));
+                    p.push(new Periodo(i, next, df(i, "yyyy", true) + 'qt' + (Math.floor(i.getUTCMonth() / 3) + 1)));
                 }
                 break;
             case TipoPeriodos.cuatrimestrales:
                 for (; i <= hasta; i = new Date(next.getTime())) {
                     next = new Date(i.getTime())
                     next.setUTCMonth(i.getUTCMonth() + 4)
-                    p.push(new Periodo(i, next, df(i, "yyyy", true) + 'tr' + (i.getUTCMonth() + 1) / 4));
+                    p.push(new Periodo(i, next, df(i, "yyyy", true) + 'tr' + (Math.floor(i.getUTCMonth() / 4) + 1)));
                 }
                 break;
 
@@ -115,7 +115,7 @@ export class Periodo {
                 for (; i <= hasta; i = new Date(next.getTime())) {
                     next = new Date(i.getTime())
                     next.setUTCMonth(i.getUTCMonth() + 6)
-                    p.push(new Periodo(i, next, df(i, "yyyy", true) + '-' + (i.getUTCMonth() + 1) / 6));
+                    p.push(new Periodo(i, next, df(i, "yyyy", true) + '-' + (Math.floor(i.getUTCMonth() / 6) + 1)));
                 }
                 break;
             case TipoPeriodos.anuales:
