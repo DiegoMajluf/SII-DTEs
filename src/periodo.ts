@@ -83,7 +83,7 @@ export class Periodo {
                 }
                 break;
             case TipoPeriodos.mensuales:
-                for (; i <= hasta;i = new Date(next.getTime())) {
+                for (; i <= hasta; i = new Date(next.getTime())) {
                     next = new Date(i.getTime())
                     next.setUTCMonth(i.getUTCMonth() + 1, 1)
                     p.push(new Periodo(i, next, df(i, "yyyymm", true)));
@@ -176,22 +176,22 @@ export class Periodo {
             case TipoPeriodos.bimensuales:
                 Fini.setUTCMonth(d.getUTCMonth() + 2 * offset)
                 Ffin.setUTCMonth(d.getUTCMonth() + 2 * offset + 2, 1)
-                nombre = df(Fini, "yyyy", true) + 'bi' + (Ffin.getUTCMonth() + 1) / 2
+                nombre = df(Fini, "yyyy", true) + 'bi' + (Math.floor(Ffin.getUTCMonth() / 2) + 1)
                 break;
             case TipoPeriodos.trimestrales:
                 Fini.setUTCMonth(d.getUTCMonth() + 3 * offset)
                 Ffin.setUTCMonth(d.getUTCMonth() + 3 * offset + 3, 1)
-                nombre = df(Fini, "yyyy", true) + 'tri' + (Ffin.getUTCMonth() + 1) / 3
+                nombre = df(Fini, "yyyy", true) + 'tri' + (Math.floor(Ffin.getUTCMonth() / 3) + 1)
                 break;
             case TipoPeriodos.cuatrimestrales:
                 Fini.setUTCMonth(d.getUTCMonth() + 4 * offset)
                 Ffin.setUTCMonth(d.getUTCMonth() + 4 * offset + 4, 1)
-                nombre = df(Fini, "yyyy", true) + 'tri' + (Ffin.getUTCMonth() + 1) / 4
+                nombre = df(Fini, "yyyy", true) + 'tri' + (Math.floor(Ffin.getUTCMonth() / 4) + 1)
                 break;
             case TipoPeriodos.semestrales:
                 Fini.setUTCMonth(d.getUTCMonth() + 6 * offset)
                 Ffin.setUTCMonth(d.getUTCMonth() + 6 * offset + 6, 1)
-                nombre = df(Fini, "yyyy", true) + '-' + (Ffin.getUTCMonth() + 1) / 6
+                nombre = df(Fini, "yyyy", true) + '-' + (Math.floor(Ffin.getUTCMonth() / 6) + 1)
                 break;
             case TipoPeriodos.anuales:
                 Fini.setUTCFullYear(d.getUTCFullYear() + offset)
